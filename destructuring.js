@@ -23,7 +23,7 @@ var carDetails = {
 
 //Code Here
 
-
+ var {color, make, model, year,age } = carDetails;
 
 ////////// PROBLEM 2 //////////
 
@@ -36,6 +36,8 @@ var carDetails = {
 function greeting( obj ) {
   //Code Here
   
+   var {firstName,lastName,title} = obj;
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -55,6 +57,13 @@ function greeting( obj ) {
 
 //Code Here
 
+function totalPopulation(obj){
+
+  var {utah=1,california=2,texas=3,arizona=4} = obj;
+
+  return utah+california+texas+arizona;
+
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -69,6 +78,16 @@ function greeting( obj ) {
 
 //Code Here
 
+function ingredients(obj){
+
+  var {carb="",fat="",texproteinas=""} = obj;
+  var newArr = [];
+  for (var key in obj){
+         newArr.push(obj[key])
+       }
+      return newArr;
+
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -87,7 +106,19 @@ function greeting( obj ) {
 
 //Code Here
 
-
+ var largeNumbers = (obj) => {
+  var valuesArray = [];
+  var {first, second, third} = obj
+   for (var key in obj){
+   valuesArray.push(obj[key]);
+  var orderedValues = valuesArray.sort(function(a, b){return a - b})
+   var smallest = orderedValues[0];
+     
+   }
+ return smallest  
+ }
+ largeNumbers({first: 9, second: 5, third: 7}
+);
 
 ////////// PROBLEM 6 //////////
 
@@ -99,4 +130,13 @@ function greeting( obj ) {
 
 //Code Here
 
-
+var numberGroups = ({a, b, c}) => {
+     if (a.length > b.length && a.length > c.length){
+      return a;
+     } else if (b.length > a.length && b.length > c.length){
+       return b;
+     } else if (c.length > a.length && c.length > b.length){
+       return c;
+     }
+   }
+   numberGroups({a: [6, 2, 6], b: [ 15, 65,, 6,57], c: [ 76, 67, 89]})
